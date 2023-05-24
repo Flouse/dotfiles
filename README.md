@@ -9,5 +9,8 @@ files are tracked on a version control system,
 you can use different branches for different computers,
 you can replicate your configuration easily on new installation.
 
+## How to manage the dotfiles
+- [Using a bare repository without symlinks](https://github.com/rockyzhang24/dotfiles#-how-i-am-managing-the-dotfiles)
+
 ## References
 - [Dotfiles: Best Way to Store in a Bare Git Repository](https://www.atlassian.com/git/tutorials/dotfiles)
