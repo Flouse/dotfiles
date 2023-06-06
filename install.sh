@@ -17,13 +17,16 @@ function await {
 if ! command -v starship &> /dev/null; then
   # Install Starship
   echo "Installing starship"
-  await curl -fsSL https://starship.rs/install.sh | sh
+  await curl -fsSL https://starship.rs/install.sh | sh -s -- -y
 
   # Add Starship initialization to ~/.bashrc
-  # echo 'eval "$(starship init bash)"' >> ~/.bashrc
+  echo 'eval "$(starship init bash)"' >> ~/.bashrc
 
   # Reload shell configuration
   # source ~/.bashrc
 else
   echo "Starship is already installed."
 fi
+
+# How do I uninstall Starship?
+# https://starship.rs/faq/#why-don-t-i-see-a-glyph-symbol-in-my-prompt
