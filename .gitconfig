@@ -1,0 +1,11 @@
+[user]
+	email = 1297478+Flouse@users.noreply.github.com
+	name = Flouse
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	loq = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+	find = log --pretty=\"format:%Cgreen%H %Cblue%s\" --name-status --grep
+
+# References
+# 1. https://github.com/mathiasbynens/dotfiles/blob/main/.gitconfig
+# 2. https://github.com/gf3/dotfiles/blob/main/.gitconfig
