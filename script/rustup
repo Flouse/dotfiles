@@ -1,0 +1,8 @@
+#!/usr/bin/env/zsh
+
+if [[ ! -d ${CARGO_HOME:-~/.cargo}/bin ]]; then
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
+fi
+
+source ${CARGO_HOME:-~/.cargo}/env
+cargo --version

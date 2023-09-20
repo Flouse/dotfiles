@@ -30,3 +30,9 @@ fi
 
 # How do I uninstall Starship?
 # https://starship.rs/faq/#why-don-t-i-see-a-glyph-symbol-in-my-prompt
+
+# https://rustup.rs
+zsh script/rustup
+
+# Setup
+bash ./setup.sh
