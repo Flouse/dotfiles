@@ -2,6 +2,12 @@
 
 set -e
 
+dotfiles_dir="$(
+    cd "$(dirname "$0")"
+    pwd
+)"
+cd "$dotfiles_dir"
+
 function await {
   $@ &
   local pid=$!
@@ -32,7 +38,7 @@ fi
 # https://starship.rs/faq/#why-don-t-i-see-a-glyph-symbol-in-my-prompt
 
 # https://rustup.rs
-zsh script/rustup
+await zsh ./script/rustup
 
 # Setup
 bash ./setup.sh
