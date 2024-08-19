@@ -40,5 +40,9 @@ fi
 # https://rustup.rs
 await zsh ./script/rustup
 
+# Install fzf using the standard install script
+# See https://andrew-quinn.me/fzf/
+bash ./script/install_fzf.sh
+
 # Setup
 bash ./setup.sh
