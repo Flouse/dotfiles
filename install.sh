@@ -44,5 +44,8 @@ await zsh ./script/rustup
 # See https://andrew-quinn.me/fzf/
 bash ./script/install_fzf.sh
 
+# Install https://github.com/Wilfred/difftastic
+bash ./script/install_difftastic.sh
+
 # Setup
 bash ./setup.sh
