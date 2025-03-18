@@ -27,9 +27,6 @@ if ! command -v starship &> /dev/null; then
 
   # Add Starship initialization to ~/.bashrc
   echo 'eval "$(starship init bash)"' >> ~/.bashrc
-
-  # Reload shell configuration
-  # source ~/.bashrc
 else
   echo "Starship is already installed."
 fi
