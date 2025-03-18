@@ -1,0 +1,47 @@
+name: Test Dotfiles
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up environment
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y zsh
+
+    - name: Run install script
+      run: ./install.sh
+
+    - name: Verify Starship installation
+      run: |
+        if ! command -v starship &> /dev/null; then
+          echo "Starship installation failed"
+          exit 1
+        fi
+
+    - name: Verify fzf installation
+      run: |
+        if ! command -v fzf &> /dev/null; then
+          echo "fzf installation failed"
+          exit 1
+        fi
+
+    - name: Verify Difftastic installation
+      run: |
+        if ! command -v difft &> /dev/null; then
+          echo "Difftastic installation failed"
+          exit 1
+        fi
+
+    - name: Verify Rust installation
+      run: |
+        if ! command -v cargo &> /dev/null; then
+          echo "Rust installation failed"
+          exit 1
+        fi

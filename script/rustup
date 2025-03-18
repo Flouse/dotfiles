@@ -1,8 +1,15 @@
 #!/usr/bin/env/zsh
 
-if [[ ! -d ${CARGO_HOME:-~/.cargo}/bin ]]; then
-  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
-fi
+function install_rust_if_needed() {
+  if [[ ! -d ${CARGO_HOME:-~/.cargo}/bin ]]; then
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
+    source ${CARGO_HOME:-~/.cargo}/env
+  fi
+}
 
-source ${CARGO_HOME:-~/.cargo}/env
+function cargo() {
+  install_rust_if_needed
+  ${CARGO_HOME:-~/.cargo}/bin/cargo "$@"
+}
+
 cargo --version
