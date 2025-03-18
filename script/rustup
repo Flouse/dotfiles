@@ -1,4 +1,4 @@
-#!/usr/bin/env/zsh
+#!/bin/bash
 
 function install_rust_if_needed() {
   if [[ ! -d ${CARGO_HOME:-~/.cargo}/bin ]]; then
@@ -11,5 +11,3 @@ function cargo() {
   install_rust_if_needed
   ${CARGO_HOME:-~/.cargo}/bin/cargo "$@"
 }
-
-cargo --version

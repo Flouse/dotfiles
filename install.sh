@@ -35,7 +35,7 @@ fi
 # https://starship.rs/faq/#why-don-t-i-see-a-glyph-symbol-in-my-prompt
 
 # https://rustup.rs
-await zsh ./script/rustup
+await ./script/rustup
 
 # Install fzf using the standard install script
 # See https://andrew-quinn.me/fzf/

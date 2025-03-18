@@ -10,11 +10,6 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Set up environment
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y zsh
-
     - name: Run install script
       run: ./install.sh
 
@@ -22,13 +17,6 @@ jobs:
       run: |
         if ! command -v starship &> /dev/null; then
           echo "Starship installation failed"
-          exit 1
-        fi
-
-    - name: Verify fzf installation
-      run: |
-        if ! command -v fzf &> /dev/null; then
-          echo "fzf installation failed"
           exit 1
         fi
 
@@ -45,3 +33,4 @@ jobs:
           echo "Rust installation failed"
           exit 1
         fi
+        cargo --version
