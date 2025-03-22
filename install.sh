@@ -48,15 +48,12 @@ fi
 # How do I uninstall Starship?
 # https://starship.rs/faq/#why-don-t-i-see-a-glyph-symbol-in-my-prompt
 
-# https://rustup.rs
-await ./script/rustup
-
 # Install fzf using the standard install script
 # See https://andrew-quinn.me/fzf/
-bash ./script/install_fzf.sh
+await ./script/install_fzf.sh
 
 # Install https://github.com/Wilfred/difftastic
-bash ./script/install_difftastic.sh $bin_dir
+await ./script/install_difftastic.sh $bin_dir
 
 # Setup
-bash ./setup.sh
+await ./setup.sh
