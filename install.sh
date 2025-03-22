@@ -3,19 +3,33 @@
 set -e
 
 dotfiles_dir="$(
-    cd "$(dirname "$0")"
-    pwd
+  cd "$(dirname "$0")"
+  pwd
 )"
 cd "$dotfiles_dir"
+
+if [ "$(id -u)" -eq 0 ]; then
+  bin_dir="/usr/local/bin"
+else
+  bin_dir="$HOME/.local/bin"
+  # Ensure the bin directory exists
+  mkdir -p "$bin_dir"
+
+  # Add bin_dir to PATH in ~/.bashrc if not already present
+  if ! grep -q "export PATH=\"$bin_dir:\$PATH\"" ~/.bashrc && [[ ":$PATH:" != *":$bin_dir:"* ]]; then
+    echo "export PATH=\"$bin_dir:\$PATH\"" >> ~/.bashrc
+  fi
+fi
 
 function await {
   $@ &
   local pid=$!
   wait $pid
+  local exit_code=$?
 
   if [ $? -ne 0 ]; then
     echo "Failed to execute $@"
-    exit $?
+    exit $exit_code
   fi
 }
 
@@ -23,7 +37,7 @@ function await {
 if ! command -v starship &> /dev/null; then
   # Install Starship
   echo "Installing starship"
-  await curl -fsSL https://starship.rs/install.sh | sh -s -- -y
+  await curl -fsSL https://starship.rs/install.sh | sh -s -- --bin-dir $bin_dir -y
 
   # Add Starship initialization to ~/.bashrc
   echo 'eval "$(starship init bash)"' >> ~/.bashrc
@@ -42,7 +56,7 @@ await ./script/rustup
 bash ./script/install_fzf.sh
 
 # Install https://github.com/Wilfred/difftastic
-bash ./script/install_difftastic.sh
+bash ./script/install_difftastic.sh $bin_dir
 
 # Setup
 bash ./setup.sh
