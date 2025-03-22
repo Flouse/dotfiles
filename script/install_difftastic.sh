@@ -9,7 +9,6 @@ else
   TEMP_DIR="/tmp"
   DIFTASTIC_VERSION="0.60.0"
   DIFTASTIC_TAR="difft-x86_64-unknown-linux-gnu.tar.gz"
-  bin_dir=$1
 
   # Install Difftastic
   FILE_URL="https://github.com/Wilfred/difftastic/releases/download/$DIFTASTIC_VERSION/$DIFTASTIC_TAR"
@@ -20,7 +19,8 @@ else
   tar -xzf "$TEMP_DIR/$DIFTASTIC_TAR" -C "$TEMP_DIR"
 
   echo "Moving Difftastic to /usr/local/bin..."
-  mv "$TEMP_DIR/difft" "$bin_dir"
+  BIN_DIR=$1
+  mv "$TEMP_DIR/difft" "$BIN_DIR"
   
   echo "Cleaning up temporary files..."
   rm "$TEMP_DIR/$DIFTASTIC_TAR"
