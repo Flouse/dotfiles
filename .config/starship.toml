@@ -3,36 +3,32 @@
 
 # format = '$all'
 # https://starship.rs/config/#default-prompt-format
+# see also video: https://youtu.be/VgTu1_92U0U?list=PL_L_J_Lv0U2oekcBcc-Ptm7ML4BxoCqdT&t=269
+#
 # format = """
 # $directory"""
-# see video: https://youtu.be/VgTu1_92U0U?list=PL_L_J_Lv0U2oekcBcc-Ptm7ML4BxoCqdT&t=269
 
-# Inserts a blank line between shell prompts
-add_newline = true
+[username]
+show_always = true
 
 # Replace the "❯" symbol in the prompt with "➜"
-[character]                            # The name of the module we are configuring is "character"
-success_symbol = "[➜](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+[character]                                    # The name of the module we are configuring is "character"
+success_symbol = '[](bold green)'    # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol = '[✗](bold red) '
 
 [cmd_duration]
 min_time = 100
+format = 'underwent [$duration](bold yellow)'
 
-[package]
-symbol = " "
-# hiding package module from the prompt completely
-disabled = false # Don't disable the package module
-
-[aws]
-symbol = "  "
-
-[buf]
-symbol = " "
+[battery]
+full_symbol = "• "
+charging_symbol = "⇡ "
+discharging_symbol = "⇣ "
+unknown_symbol = "❓ "
+empty_symbol = "❗ "
 
 [c]
 symbol = " "
-
-[conda]
-symbol = " "
 
 [directory]
 read_only = " "
@@ -46,23 +42,17 @@ symbol = " "
 [golang]
 symbol = " "
 
-[hg_branch]
-symbol = " "
-
-[java]
-symbol = " "
-
-[julia]
-symbol = " "
-
 [memory_usage]
 symbol = " "
 
 [nodejs]
-symbol = " "
-
-[python]
-symbol = " "
+symbol = "[⬢](bold green) "
 
 [rust]
 symbol = " "
+
+[pulumi]
+symbol = "🧊 "
+
+[typst]
+symbol = "t "
