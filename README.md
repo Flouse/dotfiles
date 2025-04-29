@@ -14,7 +14,7 @@ you can replicate your configuration easily on new installation.
 
 
 ## How to manage the dotfiles
-- [Using a bare repository without symlinks](https://github.com/rockyzhang24/dotfiles#-how-i-am-managing-the-dotfiles)
+- [Using a bare repository without symlinks](https://github.com/rockyzhang24/dotfiles/blob/38546874fdb1beae263e35f141f675b528c5a7f7/README.md#-how-i-am-managing-the-dotfiles)
 
 
 ## Rules
