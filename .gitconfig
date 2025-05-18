@@ -2,28 +2,31 @@
 	email = 1297478+Flouse@users.noreply.github.com
 	name = Flouse
 [alias]
-	# `git dlog` to show `git log -p` with difftastic.
-	dlog = "-c diff.external=difft log -p --ext-diff"
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	lq = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
-	find = log --pretty=\"format:%Cgreen%H %Cblue%s\" --name-status --grep
+	ds = diff --staged
+  find = log --pretty=\"format:%Cgreen%H %Cblue%s\" --name-status --grep
 	ff = pull --ff-only
 	pr = pull -r --autostash
 	c = commit
-	# `git dft` is less to type than `git difftool`.
-	dft = difftool
-	ds = diff --staged
-	d = diff
 
-[diff]
-	external = difft
-	tool = difftastic
-[difftool]
-	prompt = false
-[difftool "difftastic"]
-	cmd = difft "$LOCAL" "$REMOTE"
-[pager]
-	difftool = true
+
+	# `git dlog` to show `git log -p` with difftastic.
+	# dlog = "-c diff.external=difft log -p --ext-diff"
+	# `git dft` is less to type than `git difftool`.
+	# dft = difftool
+
+	# d = diff
+
+# [diff]
+# 	external = difft
+# 	tool = difftastic
+# [difftool]
+# 	prompt = false
+# [difftool "difftastic"]
+# 	cmd = difft "$LOCAL" "$REMOTE"
+# [pager]
+# 	difftool = true
 
 # References
 # 1. https://github.com/mathiasbynens/dotfiles/blob/main/.gitconfig
