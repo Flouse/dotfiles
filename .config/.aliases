@@ -1,0 +1,34 @@
+# Usage: [ -f ~/.config/.aliases ] && source ~/.config/.aliases
+
+
+# dotfiles
+alias dot='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+
+
+# some ls aliases
+alias ls='ls --color=auto'
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+alias fgrep='fgrep --color=auto'
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+
+
+# rsync aliases for transferring and copying files.
+# -avhP: archive mode, verbose, human-readable, partial progress.
+# -z: compress data during transfer.
+# See: https://tldr.inbrowser.app/pages/common/rsync
+alias rsync-cp='rsync -avhP'
+alias rsync-cpz='rsync -azvhP'
+
+# rsync alias to move files (copies then removes source).
+# -avhP: archive mode, verbose, human-readable, partial progress.
+# --remove-sent-files: remove source files after successful transfer.
+#
+# Usage:
+# rsync-mv {{path/to/local_file}} {{remote_host}}:{{path/to/remote_directory}}
+alias rsync-mv="rsync -avhP --remove-sent-files"
+# rsync-mvz: same as rsync-mv, but compresses data during transfer (-z).
+alias rsync-mvz="rsync -azvhP --remove-sent-files"
