@@ -9,7 +9,27 @@
   {
     "context": "Workspace",
     "bindings": {
-      // "shift shift": "file_finder::Toggle"
+      "cmd-k h": "workspace::ActivatePaneLeft",
+      "cmd-k j": "workspace::ActivatePaneDown",
+      "cmd-k k": "workspace::ActivatePaneUp",
+      "cmd-k l": "workspace::ActivatePaneRight",
+
+      "cmd-k shift-h": [
+        "workspace::MoveItemToPaneInDirection",
+        { "direction": "left" }
+      ],
+      "cmd-k shift-j": [
+        "workspace::MoveItemToPaneInDirection",
+        { "direction": "down" }
+      ],
+      "cmd-k shift-k": [
+        "workspace::MoveItemToPaneInDirection",
+        { "direction": "up" }
+      ],
+      "cmd-k shift-l": [
+        "workspace::MoveItemToPaneInDirection",
+        { "direction": "right" }
+      ]
     }
   },
   {
