@@ -18,7 +18,7 @@ alias egrep='egrep --color=auto'
 
 # rsync aliases for transferring and copying files.
 # -avhP: archive mode, verbose, human-readable, partial progress.
-# -z: compress data during transfer.
+# -z: compress data during transfer, compression can add CPU overhead
 # See: https://tldr.inbrowser.app/pages/common/rsync
 alias rsync-cp='rsync -avhP'
 alias rsync-cpz='rsync -azvhP'
@@ -32,3 +32,8 @@ alias rsync-cpz='rsync -azvhP'
 alias rsync-mv="rsync -avhP --remove-sent-files"
 # rsync-mvz: same as rsync-mv, but compresses data during transfer (-z).
 alias rsync-mvz="rsync -azvhP --remove-sent-files"
+
+# bwlimit
+alias rsync-mvb="rsync-mv --bwlimit=6m"
+alias rsync-cpb="rsync-cp --bwlimit=6m"
+# rsync-cpb ideapad:/mnt/WD2T/backrest-setup/repos ./repos-20250912
