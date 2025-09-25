@@ -40,5 +40,20 @@
       "ctrl-w": ["pane::CloseActiveItem", { "close_pinned": false }]
       // "j k": ["workspace::SendKeystrokes", "escape"]
     }
+  },
+  {
+    "bindings": {
+      "alt-d": "git::Diff"
+    }
+  },
+  {
+    "bindings": {
+      "ctrl-k c": "editor::DiffClipboardWithSelection"
+    }
+  },
+  {
+    "bindings": {
+      "alt-shift-f": "editor::FormatSelections"
+    }
   }
 ]
