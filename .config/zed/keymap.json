@@ -55,5 +55,10 @@
     "bindings": {
       "alt-shift-f": "editor::FormatSelections"
     }
+  },
+  {
+    "bindings": {
+      "ctrl-shift-c": "editor::CopyRelativePath"
+    }
   }
 ]
