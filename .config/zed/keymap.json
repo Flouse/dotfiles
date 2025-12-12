@@ -9,11 +9,7 @@
   {
     "context": "Workspace",
     "bindings": {
-      "cmd-k h": "workspace::ActivatePaneLeft",
-      "cmd-k j": "workspace::ActivatePaneDown",
-      "cmd-k k": "workspace::ActivatePaneUp",
-      "cmd-k l": "workspace::ActivatePaneRight",
-
+      "alt-d": "git::Diff",
       "cmd-k shift-h": [
         "workspace::MoveItemToPaneInDirection",
         { "direction": "left" }
@@ -35,30 +31,29 @@
   {
     "context": "Editor",
     "bindings": {
-      "ctrl-cmd-l": "editor::CopyPermalinkToLine",
-      "ctrl-g i": "editor::ToggleGitBlameInline",
-      "ctrl-w": ["pane::CloseActiveItem", { "close_pinned": false }]
-      // "j k": ["workspace::SendKeystrokes", "escape"]
+      "super-alt-r": "editor::FindAllReferences",
+      "alt-shift-f": "editor::FormatSelections",
+      "ctrl-k ctrl-r": "workspace::CopyRelativePath",
+      "super-shift-d": "editor::DiffClipboardWithSelection"
     }
   },
   {
     "bindings": {
-      "alt-d": "git::Diff"
+      "ctrl-alt-shift-l": "agent::OpenRulesLibrary",
+      "alt-e": "git::ExpandCommitEditor",
+      "ctrl-alt-<": "zed::OpenDefaultSettings"
     }
   },
   {
+    "context": "CommitEditor > Editor",
     "bindings": {
-      "ctrl-k c": "editor::DiffClipboardWithSelection"
+      "alt-a": "git::GenerateCommitMessage"
     }
   },
   {
+    "context": "GitCommit > Editor",
     "bindings": {
-      "alt-shift-f": "editor::FormatSelections"
-    }
-  },
-  {
-    "bindings": {
-      "ctrl-shift-c": "editor::CopyRelativePath"
+      "alt-a": "git::GenerateCommitMessage"
     }
   }
 ]
