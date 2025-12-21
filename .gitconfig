@@ -10,7 +10,7 @@
 
   find = log --pretty=\"format:%Cgreen%H %Cblue%s\" --name-status --grep
 	ff = pull --ff-only
-	pr = pull -r --autostash
+	pl = pull -r --autostash
 
 	picknc = cherry-pick --no-commit
 
