@@ -12,21 +12,21 @@
       "alt-d": "git::Diff",
       "cmd-k shift-h": [
         "workspace::MoveItemToPaneInDirection",
-        { "direction": "left" }
+        { "direction": "left" },
       ],
       "cmd-k shift-j": [
         "workspace::MoveItemToPaneInDirection",
-        { "direction": "down" }
+        { "direction": "down" },
       ],
       "cmd-k shift-k": [
         "workspace::MoveItemToPaneInDirection",
-        { "direction": "up" }
+        { "direction": "up" },
       ],
       "cmd-k shift-l": [
         "workspace::MoveItemToPaneInDirection",
-        { "direction": "right" }
-      ]
-    }
+        { "direction": "right" },
+      ],
+    },
   },
   {
     "context": "Editor",
@@ -34,26 +34,48 @@
       "super-alt-r": "editor::FindAllReferences",
       "alt-shift-f": "editor::FormatSelections",
       "ctrl-k ctrl-r": "workspace::CopyRelativePath",
-      "super-shift-d": "editor::DiffClipboardWithSelection"
-    }
+      "super-shift-d": "editor::DiffClipboardWithSelection",
+    },
+  },
+  {
+    "context": "PromptEditor",
+    "bindings": {
+      "alt-right": "agent::CycleNextInlineAssist",
+      "alt-left": "agent::CyclePreviousInlineAssist",
+    },
   },
   {
     "bindings": {
       "ctrl-alt-shift-l": "agent::OpenRulesLibrary",
       "alt-e": "git::ExpandCommitEditor",
-      "ctrl-alt-<": "zed::OpenDefaultSettings"
-    }
+      "ctrl-alt-<": "zed::OpenDefaultSettings",
+      "cmd-alt-g": ["agent::NewExternalAgentThread", { "agent": "gemini" }],
+      "cmd-alt-o": [
+        "agent::NewExternalAgentThread",
+        {
+          "agent": {
+            "custom": {
+              "name": "OpenCode",
+              "command": {
+                "command": "opencode",
+                "args": ["acp"],
+              },
+            },
+          },
+        },
+      ],
+    },
   },
   {
     "context": "CommitEditor > Editor",
     "bindings": {
-      "alt-a": "git::GenerateCommitMessage"
-    }
+      "alt-a": "git::GenerateCommitMessage",
+    },
   },
   {
     "context": "GitCommit > Editor",
     "bindings": {
-      "alt-a": "git::GenerateCommitMessage"
-    }
-  }
+      "alt-a": "git::GenerateCommitMessage",
+    },
+  },
 ]
