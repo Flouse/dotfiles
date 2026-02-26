@@ -1,6 +1,6 @@
 function install_homebrew_if_needed() {
   if ! command -v brew >/dev/null 2>&1; then
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     if [[ "$(uname)" == "Darwin" ]]; then
       HOMEBREW_PREFIX=${HOMEBREW_PREFIX:-/opt/homebrew}
     else
