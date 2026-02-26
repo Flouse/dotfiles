@@ -12,6 +12,7 @@ function add_aliases {
   echo "Add useful aliases to ~/.bash_aliases"
 
   cat ./script/rustup >> ~/.bash_aliases
+  cat ./script/homebrew >> ~/.bash_aliases
 
   echo 'alias gl="git logs"' >> ~/.bash_aliases
   echo 'alias gs="git status"' >> ~/.bash_aliases
